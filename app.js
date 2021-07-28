@@ -17,11 +17,8 @@ function getConfigFromURL() {
     const params = hash.split('&').reduce((acc, param) => {
         const [key, value] = param.split('=');
         acc[key] = parseValue(value);
-        console.log(value)
         return acc;
     }, {});
-
-    console.log(params)
 
     return params;
 }
