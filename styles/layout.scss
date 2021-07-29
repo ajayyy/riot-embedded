@@ -32,12 +32,20 @@ body {
 }
 
 .top-bar {
-    height: 50px;
     width: 100%;
     display: flex;
     z-index: 999;
-    align-items: center;
     padding-left: 100px;
+    flex-direction: column;
+}
+
+.top-bar-text {
+    padding-bottom: 10px;
+}
+
+.top-bar-title {
+    display: flex;
+    align-items: center;
 }
 
 .room-status-bar {

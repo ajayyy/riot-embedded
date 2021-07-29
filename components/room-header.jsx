@@ -12,7 +12,8 @@ import ThemeContext from './theme-context.jsx';
 export default class RoomHeader extends PureComponent {
     static propTypes = {
         homeserver: PropTypes.string.isRequired, // Homeserver URL 
-        room: PropTypes.object // Room object for corresponding room    
+        room: PropTypes.object, // Room object for corresponding room    
+        customDescription: PropTypes.string // Custom description appearing at the bottom of the room header
     };
 
     // Consume theme context
@@ -29,8 +30,14 @@ export default class RoomHeader extends PureComponent {
 
         return (
             <div className={`top-bar highlight-${theme.highlight}`}>
-                <Avatar imgUrl={avatarUrl} size={32} name={roomName} />
-                <h3>{roomName}</h3>
+                <div className={'top-bar-title'}>
+                    <Avatar imgUrl={avatarUrl} size={32} name={roomName} />
+                    <h3>{roomName}</h3>
+                </div>
+                
+                {this.props.customDescription ? 
+                    <div className={'top-bar-text'}>{this.props.customDescription}</div>
+                    : null}
             </div>
         );
     }

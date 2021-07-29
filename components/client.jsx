@@ -42,7 +42,8 @@ export default class Client extends Component{
         whitelist: PropTypes.array, // Whitelisted origins - ignore to allow all
         signInPrompt: PropTypes.string, // Show signInPrompt for - none, guests, all
         displayName: PropTypes.string, // Display name for user (used for guests)
-        composerIntialValue: PropTypes.string // Initial value of composer
+        composerIntialValue: PropTypes.string, // Initial value of composer
+        customDescription: PropTypes.string // Custom description appearing at the bottom of the room header
     };
 
     constructor(props) {
@@ -533,7 +534,8 @@ export default class Client extends Component{
                     </Modal>
 
                     {this.state.roomHeader && (<RoomHeader homeserver={homeserver}
-                        room={this.state.room} />)}
+                        room={this.state.room}
+                        customDescription={this.props.customDescription} />)}
 
                     {this.state.connectionError && <div className='room-status-bar'>
                         <b>Lost connection to the server.</b>
