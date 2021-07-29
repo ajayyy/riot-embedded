@@ -108,10 +108,10 @@ export default class EventTile extends PureComponent {
                         canWrite={this.props.canWrite}
                         showReceipts={this.props.showReceipts} />
                     <div className='msg-data'>
-                        <h4>{name} {this.props.showUserIds && <i className='text-muted'>{userId}</i>}</h4>
-                        <p>
+                        <div style={{fontWeight: 'bold'}}>{name} {this.props.showUserIds && <i className='text-muted'>{userId}</i>}</div>
+                        <div>
                             {mxBody}
-                        </p>
+                        </div>
                     </div>
                 </div>
             </li>
