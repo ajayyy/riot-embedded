@@ -25,7 +25,8 @@ export default class EventTile extends PureComponent {
         replyTo: PropTypes.func.isRequired, // Callback for setting reply
         canWrite: PropTypes.bool.isRequired, // If client can send messages
         isGuest: PropTypes.bool.isRequired, // If client is in guest mode
-        showReceipts: PropTypes.func.isRequired // Callback to show read receipts
+        showReceipts: PropTypes.func.isRequired, // Callback to show read receipts
+        showUserIds: PropTypes.bool.isRequired, // Show user IDs in the timeline
     };
 
     constructor(props) {
@@ -107,7 +108,7 @@ export default class EventTile extends PureComponent {
                         canWrite={this.props.canWrite}
                         showReceipts={this.props.showReceipts} />
                     <div className='msg-data'>
-                        <h4>{name} <i className='text-muted'>{userId}</i></h4>
+                        <h4>{name} {this.props.showUserIds && <i className='text-muted'>{userId}</i>}</h4>
                         <p>
                             {mxBody}
                         </p>

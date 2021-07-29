@@ -43,7 +43,8 @@ export default class Client extends Component{
         signInPrompt: PropTypes.string, // Show signInPrompt for - none, guests, all
         displayName: PropTypes.string, // Display name for user (used for guests)
         composerIntialValue: PropTypes.string, // Initial value of composer
-        customDescription: PropTypes.string // Custom description appearing at the bottom of the room header
+        customDescription: PropTypes.string, // Custom description appearing at the bottom of the room header
+        showUserIds: PropTypes.bool, // Show user IDs beside the username
     };
 
     constructor(props) {
@@ -61,7 +62,8 @@ export default class Client extends Component{
             reply: null,    // Event to reply to
             connectionError: false,  // Display connection error message
             currentlyTyping: new Set(), //  People currently typing in the room
-            readOnly: props.readOnly // If client is still read only
+            readOnly: props.readOnly, // If client is still read only
+            showUserIds: props.showUserIds !== undefined ? props.showUserIds : true
         };
         if (props.theme === 'auto') this.deviceTheme = true;
         this.sdk = require('matrix-js-sdk');
@@ -549,7 +551,8 @@ export default class Client extends Component{
                         <TimelinePanel homeserver={homeserver} room={this.state.room} 
                             client={this.client} replyTo={this.replyTo} 
                             canWrite={this.state.msgComposer} isGuest={this.isGuest}
-                            showReceipts={this.showReceipts} typingText={typingText} >
+                            showReceipts={this.showReceipts} typingText={typingText}
+                            showUserIds={this.state.showUserIds} >
                             {this.state.reply && this.state.msgComposer ? 
                                 <ReplyPopup homeserver={homeserver} 
                                     mxEvent={this.state.reply} client={this.client} 

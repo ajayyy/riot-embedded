@@ -4,4 +4,5 @@ export let config = {
     roomsList: false,
     urlParameters: true,
     hideHeader: true,
+    showUserIds: false,
 };

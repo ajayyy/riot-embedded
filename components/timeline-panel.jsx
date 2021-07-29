@@ -26,7 +26,8 @@ export default class TimelinePanel extends PureComponent {
         canWrite: PropTypes.bool, // If client can send messages
         isGuest: PropTypes.bool, // If client is in guest mode
         showReceipts: PropTypes.func, // Callback to show read receipts
-        typingText: PropTypes.string // Prompt about currently typing users
+        typingText: PropTypes.string, // Prompt about currently typing users
+        showUserIds: PropTypes.bool, // Show user IDs in timeline
     };
 
     constructor(props) {
@@ -138,7 +139,8 @@ export default class TimelinePanel extends PureComponent {
                         replyTo={this.props.replyTo} 
                         canWrite={this.props.canWrite}
                         isGuest={this.props.isGuest}
-                        showReceipts={this.props.showReceipts} />
+                        showReceipts={this.props.showReceipts}
+                        showUserIds={this.props.showUserIds} />
                 ); 
             }
         }
