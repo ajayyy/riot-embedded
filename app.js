@@ -30,5 +30,5 @@ function parseValue(value) {
     } else if (Number.isFinite(value)) {
         return Number(value);
     }
-    return decodeURI(value);
+    return decodeURIComponent(value);
 }
