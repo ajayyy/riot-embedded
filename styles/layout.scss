@@ -35,13 +35,13 @@ body {
     width: 100%;
     display: flex;
     z-index: 999;
-    padding-left: 100px;
     flex-direction: column;
 }
 
 .top-bar-text {
     padding-bottom: 10px;
     font-size: 11px;
+    text-align: center;
 }
 
 .top-bar-title {
