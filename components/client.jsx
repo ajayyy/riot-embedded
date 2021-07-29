@@ -42,7 +42,7 @@ export default class Client extends Component{
         whitelist: PropTypes.array, // Whitelisted origins - ignore to allow all
         signInPrompt: PropTypes.string, // Show signInPrompt for - none, guests, all
         displayName: PropTypes.string, // Display name for user (used for guests)
-        composerIntialValue: PropTypes.string, // Initial value of composer
+        composerInitialValue: PropTypes.string, // Initial value of composer
         customDescription: PropTypes.string, // Custom description appearing at the bottom of the room header
         showUserIds: PropTypes.bool, // Show user IDs beside the username
     };
@@ -559,7 +559,7 @@ export default class Client extends Component{
                                     replyTo={this.replyTo} /> : 
                                 <></>}
                             {this.state.msgComposer ? <MessageComposer client={this.client} 
-                                intialValue={this.props.composerIntialValue}
+                                intialValue={this.props.composerInitialValue}
                                 roomId={currentRoomId} mxEvent={this.state.reply} 
                                 unsetReply={this.replyTo} ref={this.msgComposer}
                                 openContinueModal={this.state.readOnly && this.continueModal.current ? 

@@ -69,7 +69,7 @@ To set custom highlight colors, change the Sass variables `$color-highlight-cust
     - `'guests'` - Show if signed in as guest
     - `'all'` - Always show
 *  `displayName` (*string*) - Display name of user, useful when using guest accounts
-*  `composerIntialValue` (*string*) - Initial value of the composer for prepoulating a sample message
+*  `composerInitialValue` (*string*) - Initial value of the composer for prepoulating a sample message
 *  `customDescription` (*string*) - Custom description appearing at the bottom of the room header
 *  `signInPrompt` (*string*) - Show sign in prompts    
     - `'none'` - Never show (default)
