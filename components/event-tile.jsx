@@ -57,6 +57,9 @@ export default class EventTile extends PureComponent {
         let fmtBody = this.props.mxEvent.event.content.formatted_body;
         let mxBody;
 
+        let filteredNameMatch = name.match(/(.+) \(@.+\)/);
+        if (filteredNameMatch && filteredNameMatch.length > 1) name = filteredNameMatch[1];
+
         // If deleting is possible by current user
         let canDelete = this.props.client.getUserId() == userId &&
             !this.props.isGuest;
