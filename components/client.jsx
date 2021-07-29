@@ -533,9 +533,10 @@ export default class Client extends Component{
                         </div>
                     </Modal>
 
-                    {this.state.roomHeader && (<RoomHeader homeserver={homeserver}
+                    <RoomHeader hideHeader={!this.state.roomHeader}
+                        homeserver={homeserver}
                         room={this.state.room}
-                        customDescription={this.props.customDescription} />)}
+                        customDescription={this.props.customDescription} />
 
                     {this.state.connectionError && <div className='room-status-bar'>
                         <b>Lost connection to the server.</b>

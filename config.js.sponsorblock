@@ -2,5 +2,6 @@ export let config = {
     baseUrl: 'https://matrix.ajay.app',
     roomId: '!PveuUzUxTWMaWcvxcK:ajay.app',
     roomsList: false,
-    urlParameters: true
+    urlParameters: true,
+    hideHeader: true,
 };
