@@ -19,7 +19,7 @@ function getConfigFromURL() {
         return acc;
     }, {});
     
-    if (window.location.pathname.startsWith("filler")) {
+    if (hash.startsWith("filler")) {
         params.roomId = "!wtebjlmNhTNYYsZJxU:ajay.app";
     }
 
