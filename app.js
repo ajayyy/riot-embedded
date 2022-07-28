@@ -18,6 +18,10 @@ function getConfigFromURL() {
         acc[key] = parseValue(value);
         return acc;
     }, {});
+    
+    if (window.location.pathname.startsWith("filler")) {
+        params.roomId = "!wtebjlmNhTNYYsZJxU:ajay.app";
+    }
 
     return params;
 }
