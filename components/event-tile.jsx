@@ -85,7 +85,7 @@ export default class EventTile extends PureComponent {
                     <img src={img_url} className={`timeline-img-${theme.highlight}`} />
                 </a>
             );
-        } else if (this.props.mxEvent.event.content.msgtype === 'm.text') {
+        } else if (this.props.mxEvent.event.content.msgtype === 'm.text' || this.props.mxEvent.event.content.msgtype === 'm.notice') {
             // Load text only messages
             if (fmtBody) {
                 let saneHtml = new Sanitizer(fmtBody).sanitize();
