@@ -44,6 +44,7 @@ export default class Client extends Component{
         displayName: PropTypes.string, // Display name for user (used for guests)
         composerInitialValue: PropTypes.string, // Initial value of composer
         customDescription: PropTypes.string, // Custom description appearing at the bottom of the room header
+        bigDescription: PropTypes.bool,
         showUserIds: PropTypes.bool, // Show user IDs beside the username
     };
 
@@ -538,7 +539,8 @@ export default class Client extends Component{
                     <RoomHeader hideHeader={!this.state.roomHeader}
                         homeserver={homeserver}
                         room={this.state.room}
-                        customDescription={this.props.customDescription} />
+                        customDescription={this.props.customDescription}
+                        bigDescription={this.props.bigDescription} />
 
                     {this.state.connectionError && <div className='room-status-bar'>
                         <b>Lost connection to the server.</b>

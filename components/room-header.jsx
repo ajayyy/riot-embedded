@@ -14,7 +14,8 @@ export default class RoomHeader extends PureComponent {
         hideHeader: PropTypes.bool, // Hide header
         homeserver: PropTypes.string.isRequired, // Homeserver URL 
         room: PropTypes.object, // Room object for corresponding room    
-        customDescription: PropTypes.string // Custom description appearing at the bottom of the room header
+        customDescription: PropTypes.string, // Custom description appearing at the bottom of the room header
+        bigDescription: PropTypes.bool
     };
 
     // Consume theme context
@@ -38,7 +39,7 @@ export default class RoomHeader extends PureComponent {
                     </div> }
                 
                 {this.props.customDescription && 
-                    <div className={'top-bar-text'}>{this.props.customDescription}</div> }
+                    <div className={'top-bar-text' + (bigDescription ? "big-text" : "")}>{this.props.customDescription}</div> }
             </div>
         );
     }
