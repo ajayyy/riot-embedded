@@ -39,7 +39,7 @@ export default class RoomHeader extends PureComponent {
                     </div> }
                 
                 {this.props.customDescription && 
-                    <div className={'top-bar-text' + (bigDescription ? "big-text" : "")}>{this.props.customDescription}</div> }
+                    <div className={'top-bar-text' + (this.props.bigDescription ? "big-text" : "")}>{this.props.customDescription}</div> }
             </div>
         );
     }
